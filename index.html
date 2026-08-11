@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Completo - HTML, CSS & JavaScript</title>
+    <title>Estilo & Moda Country</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
     <style>
-        /* --- 1. VARIÁVEIS E TEMAS --- */
+        /* --- 1. VARIÁVEIS E TEMAS COUNTRY --- */
         :root {
-            --bg-color: #f5efe6;
-            --text-color: #3e2723;
-            --primary-color: #8d6e63;
-            --primary-dark: #5d4037;
-            --border-color: #d7ccc8;
-            --card-bg: #ffffff;
-            --shadow: rgba(0, 0, 0, 0.08);
+            --bg-color: #f4eae1;
+            --text-color: #2b1a12;
+            --primary-color: #8b4513; /* Couro Tradicional */
+            --primary-dark: #4a2506;  /* Couro Escuro / Madeira */
+            --accent-color: #c07a36;   /* Fivela / Caramelo */
+            --border-color: #d1b89d;
+            --card-bg: #fffbf7;
+            --shadow: rgba(74, 37, 6, 0.12);
         }
 
         body.dark-theme {
-            --bg-color: #1e1b18;
-            --text-color: #e0d8d0;
-            --primary-color: #a1887f;
-            --primary-dark: #d7ccc8;
-            --border-color: #4e342e;
-            --card-bg: #2d2623;
-            --shadow: rgba(0, 0, 0, 0.4);
+            --bg-color: #1a120b;      /* Noite no Rincão */
+            --text-color: #ebdcd0;
+            --primary-color: #c07a36;
+            --primary-dark: #d99a53;
+            --border-color: #422d1d;
+            --card-bg: #261b12;
+            --shadow: rgba(0, 0, 0, 0.6);
         }
 
         /* --- 2. RESET E REGRAS GERAIS --- */
@@ -33,7 +38,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Lora', Georgia, serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -44,26 +49,31 @@
 
         /* --- 3. HEADER E FERRAMENTAS --- */
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(rgba(43, 26, 18, 0.75), rgba(43, 26, 18, 0.85)), 
+                        url('https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=1200&q=80') center/cover;
             color: #ffffff;
-            padding: 2.5rem 1rem;
+            padding: 3.5rem 1rem;
             text-align: center;
+            border-bottom: 5px solid var(--accent-color);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: -0.5px;
+            font-family: 'Rye', cursive;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
         header p {
             margin: 0.5rem 0 0 0;
             font-style: italic;
-            opacity: 0.9;
+            opacity: 0.95;
+            font-size: 1.1rem;
         }
 
         .header-tools {
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -72,107 +82,130 @@
         }
 
         #search-input {
-            padding: 0.6rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
-            border: none;
+            border: 2px solid var(--accent-color);
             outline: none;
-            width: 260px;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            width: 280px;
+            font-size: 0.95rem;
+            background-color: #fffbf7;
+            color: #2b1a12;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         #theme-toggle {
-            background-color: transparent;
-            border: 2px solid #ffffff;
+            background-color: var(--accent-color);
+            border: 2px solid var(--accent-color);
             color: #ffffff;
-            padding: 0.5rem 1.2rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
             cursor: pointer;
             font-weight: 600;
+            font-family: sans-serif;
             transition: all 0.2s ease;
         }
 
         #theme-toggle:hover {
             background-color: #ffffff;
-            color: var(--primary-color);
+            color: var(--primary-dark);
         }
 
         /* --- 4. CONTEÚDO PRINCIPAL E GRID --- */
         main {
-            max-width: 900px;
+            max-width: 950px;
             width: 90%;
-            margin: 2rem auto;
+            margin: 2.5rem auto;
         }
 
         .section-title {
             color: var(--primary-dark);
+            font-family: 'Rye', cursive;
             margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px dashed var(--border-color);
             padding-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
 
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.8rem;
         }
 
-        /* --- 5. CARDS DE ARTIGO --- */
+        /* --- 5. CARDS DE MODA COUNTRY --- */
         article {
             background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-left: 5px solid var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
             border-radius: 8px;
             box-shadow: 0 4px 10px var(--shadow);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            overflow: hidden;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
         }
 
         article:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 14px var(--shadow);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px var(--shadow);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         article h3 {
             margin-top: 0;
+            margin-bottom: 0.5rem;
             color: var(--primary-dark);
+            font-family: 'Rye', cursive;
+            font-size: 1.2rem;
         }
 
         article p {
             font-size: 0.95rem;
+            margin: 0 0 1rem 0;
             flex-grow: 1;
         }
 
         a.read-more {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: 600;
-            margin-top: 1rem;
+            font-weight: 700;
             display: inline-block;
             transition: color 0.2s ease;
         }
 
         a.read-more:hover {
-            color: var(--primary-dark);
+            color: var(--accent-color);
             text-decoration: underline;
         }
 
         /* --- 6. FOOTER --- */
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem 1rem;
             background-color: var(--card-bg);
             border-top: 1px solid var(--border-color);
-            margin-top: 3rem;
+            margin-top: 3.5rem;
             font-size: 0.9rem;
         }
 
         /* --- 7. RESPONSIVIDADE --- */
         @media (max-width: 600px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .header-tools {
@@ -189,43 +222,54 @@
 <body>
 
     <header>
-        <h1>Diário de Desenvolvimento</h1>
-        <p>Anotações, projetos e dicas sobre desenvolvimento web</p>
+        <h1>Mundo Country & Estilo</h1>
+        <p>Guia completo sobre botas, chapéus, fivelas e o autêntico visual sertanejo e western</p>
 
         <div class="header-tools">
-            <input type="text" id="search-input" placeholder="Buscar artigos..." aria-label="Buscar artigos">
+            <input type="text" id="search-input" placeholder="Buscar artigos de moda..." aria-label="Buscar artigos">
             <button id="theme-toggle" aria-label="Alternar Tema">🌙 Modo Escuro</button>
         </div>
     </header>
 
     <main>
         <section>
-            <h2 class="section-title">Últimas Publicações</h2>
+            <h2 class="section-title">Destaques do Estilo Sertanejo</h2>
             
             <div class="articles-grid" id="articles-container">
+                
                 <article>
-                    <h3>HTML5 Semântico</h3>
-                    <p>Entenda como utilizar elementos semânticos para estruturar páginas mais acessíveis e amigáveis para motores de busca.</p>
-                    <a href="#" class="read-more">Leia mais &rarr;</a>
+                    <img class="card-img" src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=600&q=80" alt="Chapéu de feltro country e bota de couro">
+                    <div class="card-body">
+                        <h3>Como Escolher o Chapéu Ideal</h3>
+                        <p>Descubra as diferenças entre os chapéus de feltro e palha, e saiba qual formato combina melhor com seu rosto e ocasião.</p>
+                        <a href="#" class="read-more">Confira o Guia &rarr;</a>
+                    </div>
                 </article>
 
                 <article>
-                    <h3>Layouts com CSS Grid</h3>
-                    <p>Aprenda a construir layouts responsivos e flexíveis em duas dimensões com poucas linhas de código CSS.</p>
-                    <a href="#" class="read-more">Leia mais &rarr;</a>
+                    <img class="card-img" src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80" alt="Botas de couro rústicas artesanais">
+                    <div class="card-body">
+                        <h3>Botas de Couro Legítimo</h3>
+                        <p>Aprenda a conservar suas botas Texanas e bico fino de couro para que durem anos mantendo o brilho e a resistência.</p>
+                        <a href="#" class="read-more">Leia mais &rarr;</a>
+                    </div>
                 </article>
 
                 <article>
-                    <h3>Manipulação de DOM com JS</h3>
-                    <p>Descubra como interagir com elementos HTML e criar experiências dinâmicas utilizando JavaScript puro.</p>
-                    <a href="#" class="read-more">Leia mais &rarr;</a>
+                    <img class="card-img" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Moda e jaquetas do mundo country western">
+                    <div class="card-body">
+                        <h3>Cintos, Fivelas e Acessórios</h3>
+                        <p>O segredo do visual country está nos detalhes: como combinar fivelas trabalhadas, cintos trançados e camisas xadrez.</p>
+                        <a href="#" class="read-more">Ver Dicas &rarr;</a>
+                    </div>
                 </article>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Diário de Desenvolvimento. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Mundo Country & Estilo. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -233,7 +277,6 @@
         const themeBtn = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Recupera preferência salva no navegador
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark-theme');
             themeBtn.textContent = '☀️ Modo Claro';
